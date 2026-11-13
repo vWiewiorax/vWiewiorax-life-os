@@ -55,7 +55,7 @@ export function Timeline({ date, blocks }: { date: string; blocks: Block[] }) {
         <p className="text-sm text-muted-foreground">Brak bloków czasu. Dodaj je ręcznie albo poproś AI o ułożenie planu.</p>
       )}
       <form
-        className="grid grid-cols-2 gap-2 sm:grid-cols-[auto_auto_1fr_auto_auto]"
+        className="grid grid-cols-2 gap-2"
         onSubmit={(e) => {
           e.preventDefault();
           if (!v.title.trim()) return;
@@ -64,7 +64,7 @@ export function Timeline({ date, blocks }: { date: string; blocks: Block[] }) {
       >
         <Input aria-label="Od" type="time" value={v.start_time} onChange={(e) => setV({ ...v, start_time: e.target.value })} />
         <Input aria-label="Do" type="time" value={v.end_time} onChange={(e) => setV({ ...v, end_time: e.target.value })} />
-        <Input className="col-span-2 sm:col-span-1" aria-label="Nazwa bloku" placeholder="Co robisz w tym czasie?" value={v.title} onChange={(e) => setV({ ...v, title: e.target.value })} />
+        <Input className="col-span-2" aria-label="Nazwa bloku" placeholder="Co robisz w tym czasie?" value={v.title} onChange={(e) => setV({ ...v, title: e.target.value })} />
         <NativeSelect aria-label="Rodzaj" value={v.kind} onChange={(e) => setV({ ...v, kind: e.target.value as BlockKind })}>
           {BLOCK_KINDS.map((k) => (
             <option key={k.value} value={k.value}>{k.label}</option>

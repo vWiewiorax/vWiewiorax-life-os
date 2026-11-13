@@ -94,7 +94,7 @@ export default async function CalendarPage({ searchParams }: PageProps<"/kalenda
             const dayEntries = entries.filter((e) => e.key === d).sort((a, b) => a.time.localeCompare(b.time));
             const dayClasses = (classes.data ?? []).filter((c) => c.weekday === weekdayOf(d));
             return (
-              <div key={d} className={cn("min-h-28 border-b border-r p-1.5 [&:nth-child(7n)]:border-r-0", !inMonth && "bg-muted/20 text-muted-foreground")}>
+              <div key={d} className={cn("min-h-28 min-w-0 overflow-hidden border-b border-r p-1.5 [&:nth-child(7n)]:border-r-0", !inMonth && "bg-muted/20 text-muted-foreground")}>
                 <Link href={`/planer?data=${d}`} className={cn("mb-1 inline-flex size-6 items-center justify-center rounded-full text-xs hover:bg-muted", d === today && "bg-primary font-semibold text-primary-foreground hover:bg-primary")}>
                   {Number(d.slice(8))}
                 </Link>
