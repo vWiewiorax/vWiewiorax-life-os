@@ -39,8 +39,8 @@ Uczciwość AI: bez `OPENAI_API_KEY` funkcje AI pokazują jasny komunikat o brak
 Wymagania: [Node.js 20+](https://nodejs.org), [Docker Desktop](https://www.docker.com/products/docker-desktop/) (dla lokalnego Supabase), Git.
 
 ```powershell
-git clone https://github.com/vWiewiorax/life-os.git
-cd life-os
+git clone https://github.com/vWiewiorax/vWiewiorax-life-os.git
+cd vWiewiorax-life-os
 npm install
 npx supabase start
 ```
